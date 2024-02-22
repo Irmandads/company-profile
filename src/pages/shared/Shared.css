@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
 
 .font-lobster {
-    font-family: 'Lobster', cursive;
+    font-family: "Lobster", cursive;
     letter-spacing: 2px;
 }
 
@@ -15,19 +15,18 @@
         padding-right: 5%;
         padding-left: 5%;
     }
-    
+
     .text-button-mobile {
         font-size: 10px;
     }
 }
-
 
 .visible {
     width: 100%;
     position: fixed;
     top: 0px;
     z-index: 40;
-    height: 4rem;
+    height: 5rem;
     transition: 0.3s linear;
     display: flex;
     justify-content: stretch;

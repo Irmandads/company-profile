@@ -7,7 +7,7 @@ export const headingAnimation = {
   visible: {
     y: 0,
     opacity: 1,
-    transition: { duration: 1, type: "spring" },
+    transition: { duration: 1.5, type: "spring" },
   },
 };
 
@@ -21,7 +21,7 @@ export const sectionBodyAnimation = {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.5,
+      duration: 0.75,
       delay: 0.75,
     },
   },

@@ -4,8 +4,9 @@ import { NotFound, Loader, ScrollToTop, Navbar, Footer, BlogDetail, BlogIndex } 
 import Blog from "./pages/Blog";
 import Kontak from "./pages/Kontak";
 import Tentang from "./pages/Tentang";
+import Portofolio from "./pages/Portofolio";
 const Home = React.lazy(() => import("./pages/Home"));
-const Paket = React.lazy(() => import("./pages/Paket"));
+// const Paket = React.lazy(() => import("./pages/Paket"));
 
 function App() {
   const location = useLocation();
@@ -18,7 +19,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/tentang" element={<Tentang />} />
-          <Route path="/paket" element={<Paket />} />
+          {/* <Route path="/paket" element={<Paket />} /> */}
+          <Route path="/portofolio" element={<Portofolio />} />
           <Route path="/kontak" element={<Kontak />} />
           <Route path="/blog" element={<Blog />}>
             <Route index element={<BlogIndex />} />

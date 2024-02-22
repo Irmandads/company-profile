@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import placeholderImage from "../../../assets/images/placeholder.jpg";
 import blogs from "../../../utils/blogs";
 import { FaAngleDoubleRight, FaAngleDoubleLeft } from "react-icons/fa";
-import { BottomLine } from "../../../components";
+// import { BottomLine } from "../../../components";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import {
@@ -56,7 +56,6 @@ const BlogIndex = () => {
         <h1 className="text-3xl font-semibold text-center">
           Informasi <span className="text-primary">Terbaru</span>
         </h1>
-        <BottomLine />
       </motion.div>
       <div className="mt-10">
         <motion.div

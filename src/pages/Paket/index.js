@@ -9,7 +9,7 @@ import {
   headingAnimation,
   sectionBodyAnimation,
 } from "../../hooks/useAnimation";
-import { BottomLine, Countdown } from "../../components";
+// import { BottomLine, Countdown } from "../../components";
 
 const Paket = () => {
   const [items, setItems] = useState(Items);
@@ -61,8 +61,8 @@ const Paket = () => {
             <h1 className="text-4xl font-semibold text-center">
               Harga Paket Promo <span className="text-primary">Tahun Baru 2024</span>
             </h1>
-            <BottomLine />
-            <Countdown />
+            {/* <BottomLine />
+            <Countdown /> */}
           </div>
         </motion.div>
 
@@ -225,6 +225,9 @@ const Paket = () => {
         )}
       </div>
     </div>
+
+    
+
   );
 };
 

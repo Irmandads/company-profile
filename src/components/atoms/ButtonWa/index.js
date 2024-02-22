@@ -5,8 +5,8 @@ const ButtonWa = () => {
     const [isHovering, setIsHovering] = useState(false);
 
     const handleClick = () => {
-        const number = '6281398097276';
-        const text = 'Mulia Sejati Nusantara Production';
+        const number = '6281256788858';
+        const text = 'satellite';
         const url = `https://wa.me/${number}?text=${encodeURIComponent(text)}`;
         window.open(url, '_blank');
     };
@@ -26,7 +26,7 @@ const ButtonWa = () => {
                 )}
                 <img
                     src={WaMSN}
-                    alt="WhatsApp MSN PRODUCTION"
+                    alt="WhatsApp company"
                     className="sm:w-50 w-36"
                 />
             </div>

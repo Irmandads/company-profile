@@ -1,12 +1,14 @@
 import React from "react";
-import { TentangKami, VisiMisi, Tim } from "../../components";
+import { TentangKami } from "../../components";
+import Alasan from "../../components/molecules/Alasan";
 
 const Tentang = () => {
   return (
     <div className="pt-16">
       <TentangKami />
-      <VisiMisi />
-      <Tim />
+      {/* <VisiMisi /> */}
+      {/* <Tim /> */}
+      <Alasan />
     </div>
   );
 };
