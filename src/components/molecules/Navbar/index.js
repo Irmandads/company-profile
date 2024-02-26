@@ -58,7 +58,7 @@ export default function Navbar() {
             <div className="flex items-center justify-between w-full px-3 py-3 md:px-24">
                 <div>
                     <Link to="/">
-                        <img className="w-36 pr-10" src={logo} alt="MSN PRODUCTION Logo" />
+                        <img className="w-36 pr-10" src={logo} alt="logoo" />
                     </Link>
                 </div>
                 <div>
