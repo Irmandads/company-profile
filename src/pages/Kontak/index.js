@@ -1,21 +1,12 @@
-import React, { useEffect, useRef, useState } from "react";
-import "./Kontak.css";
-import "../shared/Shared.css";
-import { motion, useAnimation } from "framer-motion";
-import { FaClock, FaPhoneAlt, FaLocationArrow } from "react-icons/fa";
-import { MdEmail, MdSend } from "react-icons/md";
-import emailjs from "@emailjs/browser";
-import Swal from "sweetalert2";
-import { useNavigate } from "react-router-dom";
 import { useInView } from "react-intersection-observer";
-import { headingAnimation, kontakAnimation } from "../../hooks/useAnimation";
-import { Map } from "../../components";
-// import Map from "../../pages/Kontak/Map/Map";
+import { KontakKami } from "../../components";
+import { useEffect, useState } from "react";
+import { motion, useAnimation } from "framer-motion";
+import { headingAnimation } from "../../hooks/useAnimation";
+import ABack from "../../assets/images/background/download.jpeg";
 
 const Kontak = () => {
-    const navigate = useNavigate();
-    const form = useRef();
-    const [ref, inView] = useInView({ threshold: 0.3, triggerOnce: true });
+    const [inView] = useInView();
     const [viewDiv, setViewDiv] = useState(false);
     const animation = useAnimation();
 
@@ -27,80 +18,24 @@ const Kontak = () => {
         }
     }, [inView, animation]);
 
-    const handleSend = (e) => {
-        e.preventDefault();
-        emailjs.sendForm("service_6xnj05v", "template_exk29f8", form.current, "kLfLk-o6LKj-L9c77").then(
-            (result) => {
-                console.log(result.text);
-                Swal.fire({
-                    position: "top-end",
-                    icon: "success",
-                    title: "Your Message has been sent",
-                    showConfirmButton: false,
-                    timer: 1500,
-                });
-                navigate("/");
-            },
-            (error) => {
-                console.log(error.text);
-            }
-        );
-        e.target.reset();
-    };
     return (
-        <div className="my-20 py-16 parent">
-            <motion.div initial="hidden" animate={viewDiv && "visible"} variants={headingAnimation}>
-                <h1 className="text-4xl font-bold text-center drop-shadow-md">
-                    Hubungi <span className="text-primary">Kami</span>
-                </h1>
-                <h2 className="py-5 text-center text-accent">
-                    Jangan sungkan untuk menghubungi kami kapan saja. Anda bisa berkonsultasi gratis dengan tim hebat kami yang siap membantu anda dalam pembuatan website dan mengembangkan bisnis perusahaan Anda.
-                </h2>
+        <>
+            <motion.div className="flex flex-col items-center" initial="hidden" animate={viewDiv && "visible"} variants={headingAnimation}>
+                <div className="relative">
+                    <img src={ABack} alt="Background" className="flex justify-center w-full" style={{ filter: "brightness(70%)" }} />
+                    <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" style={{ width: "100%" }}>
+                        <motion.div className="text-center" initial={{ opacity: 0, y: 50 }} animate={{ opacity: viewDiv ? 1 : 0, y: viewDiv ? 0 : 50 }} transition={{ duration: 1 }}>
+                            <h2 className="text-white text-6xl font-bold">Kontak Kami</h2>
+                            <p className="text text-white text-lg mt-2">Solusi tercepat untuk anda yang membutuhkan aplikasi</p>
+                        </motion.div>
+                    </div>
+                </div>
             </motion.div>
-            <div className="grid grid-cols-1 gap-20 mt-8 md:grid-cols-2">
-                <motion.div className="" ref={ref} initial="hidden" animate={viewDiv && "visible"} variants={kontakAnimation}>
-                    <form ref={form} onSubmit={handleSend}>
-                        <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-6">
-                            <input className="input-field" type="text" name="name" id="name" placeholder="Nama" required />
-                            <input className="input-field" type="email" name="email" id="email" placeholder="Email" required />
-                        </div>
-                        <input className="input-field" type="text" name="subject" id="subject" placeholder="Subjek" required />
-                        <textarea className="input-field" name="message" id="message" cols="30" rows="5" placeholder="Pesan" required></textarea>
-                        <button type="submit" value="Send Message" className="primary-button">
-                            <span>Kirim</span>
-                            <span>
-                                <MdSend />
-                            </span>
-                        </button>
-                    </form>
-                </motion.div>
-                <motion.div className="" initial={{ y: 50, opacity: 0 }} animate={viewDiv && "visible"} variants={kontakAnimation}>
-                    <div className="flex items-center my-6">
-                        <FaPhoneAlt className="mr-8 text-2xl duration-300 cursor-pointer hover:text-primary"></FaPhoneAlt>
-                        <h3 className="font-medium text-primary">+62 821 2566 4554</h3>
-                    </div>
-                    <div className="flex items-center my-6">
-                        <MdEmail className="mr-8 text-3xl duration-300 cursor-pointer hover:text-primary"></MdEmail>
-                        <h3 className="font-medium text-primary">info@msnproduction.com</h3>
-                    </div>
-                    <div className="flex items-center my-6">
-                        <FaClock className="mr-8 text-2xl duration-300 cursor-pointer hover:text-primary"></FaClock>
-                        <h3 className="font-medium text-primary">Senin – Jum'at, 09:00 – 17:00</h3>
-                    </div>
-                    <div className="flex items-center my-6">
-                        <FaLocationArrow className="mr-8 text-4xl duration-300 cursor-pointer hover:text-primary"></FaLocationArrow>
-                        <h3 className="font-medium text-primary">Kp. Cigintung RT 010 RW 004, Ds. Kertasari, Kec. Pangkalan, Kab. Karawang, Jawa Barat, 41362</h3>
-                    </div>
-                </motion.div>
+            <div className="mt-20 py-16 parent"></div>
+            <div className="-mt-24">
+                <KontakKami />
             </div>
-            {/* <motion.div
-        initial="hidden"
-        animate={viewDiv && "visible"}
-        variants={headingAnimation}
-      >
-        <Map />
-      </motion.div> */}
-        </div>
+        </>
     );
 };
 

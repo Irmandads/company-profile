@@ -30,9 +30,7 @@ const Informasi = () => {
     return (
         <div className="py-16 parent">
             <motion.div initial="hidden" animate={viewDiv && "visible"} variants={headingAnimation}>
-                <h1 className="text-3xl font-semibold text-center">
-                    Informasi <span className="text-primary">Terbaru</span>
-                </h1>
+                <h1 className="text-5xl font-bold text-center">Informasi Terbaru</h1>
                 {/* <BottomLine /> */}
             </motion.div>
             <div className="mt-10">

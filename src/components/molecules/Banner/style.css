@@ -1,0 +1,25 @@
+.button-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.button-link:hover {
+    text-decoration: underline; /* Atur efek hover sesuai keinginan */
+}
+
+.primary-button {
+    background-color: blue; /* Ganti warna latar belakang sesuai keinginan */
+    color: white; /* Ganti warna teks sesuai keinginan */
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Tambahkan efek transisi jika diinginkan */
+}
+
+.primary-button:hover {
+    background-color: white; /* Ganti warna latar belakang saat tombol diberi hover */
+    text-decoration: none;
+    border: none;
+    color: blue;
+    
+}

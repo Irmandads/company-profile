@@ -25,12 +25,6 @@ const Services = [
         icon: <FaInfo />,
         description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nesciunt beatae atque accusantium temporibus. Distinctio sint voluptatum blanditiis facere nisi sequi.",
     },
-    {
-        id: 5,
-        title: "Mencoba",
-        icon: <FaBook />,
-        description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nesciunt beatae atque accusantium temporibus. Distinctio sint voluptatum blanditiis facere nisi sequi.",
-    },
 ];
 
 export default Services;

@@ -21,7 +21,7 @@ export const sectionBodyAnimation = {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.75,
+      duration: 1,
       delay: 0.75,
     },
   },

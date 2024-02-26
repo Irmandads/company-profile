@@ -1,46 +1,94 @@
 import React from "react";
-// import { Link } from "react-router-dom";
-import { FaAngleRight } from "react-icons/fa";
+import { FaAngleRight, FaHandshake, FaInfo, FaLaptopHouse, FaReact } from "react-icons/fa";
 import { motion } from "framer-motion";
-import bannerImg from "../../../assets/images/banner-msn-production.svg";
 import "../../../pages/shared/Shared.css";
-// import { SecondaryBtn } from "../../../components";
+import BannerImg from "../../../assets/images/foto/banner.jpeg";
+import "./style.css";
 
 const Banner = () => {
     return (
-        <div className="parent min-h-[100vh] flex flex-col-reverse lg:flex-row items-center justify-between">
-            <motion.div initial={{ x: "-100vw" }} animate={{ x: 0 }} transition={{ duration: 1 }}>
-                <h1 className="mb-4 text-5xl font-bold">
-                    <span className="text text-primary"></span>MSN PRODUCTION <br /> Lorem ipsum dolor sit amet.
-                </h1>
-                {/* </div> */}
-                <p className="max-w-md mb-10 font-medium text-accent">MSN PRODUCTION adalah perusahaan penyedia layanan jasa pembuatan Website, Aplikasi Mobile, Branding & Konten Kreatif.</p>
+        <>
+            <motion.div
+                className="site-hero overlay"
+                style={{ backgroundImage: `url(${BannerImg})`, backgroundSize: "cover", backgroundRepeat: "no-repeat", backgroundPosition: "center" }}
+                data-stellar-background-ratio="0.5"
+                id="section-home"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 1 }}
+            >
+                <motion.div className="parent min-h-[100vh] flex flex-col-reverse lg:flex-row items-center justify-between" initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 0.5 }}>
+                    <div className="col-md-6" data-aos="fade-up">
+                        <h1 className="mb-4 text-4xl font-bold text-white">SATELLITE ORBIT COMMUNITY</h1>
+                        <p className="max-w-md mb-10 font-medium text-white">
+                            Satellite Orbit Community adalah perusahaan yang menyediakan layanan jasa pembuatan Website, Aplikasi Mobile, Branding & Konten Kreatif untuk anda yang ingin membangun sebuah perusahaan.
+                        </p>
+                        <div className="flex items-center mb-20">
+                            <a href="https://wa.me/6281256788858" target="_blank" className="button-link">
+                                <button className="primary-button">
+                                    <span className="text-button-mobile">Konsultasi Gratis</span>
+                                    <span>
+                                        <FaAngleRight />
+                                    </span>
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                </motion.div>
+            </motion.div>
 
-                <div className="flex items-center mb-20">
-                    <a href="https://wa.me/6281256788858" target="blank">
-                        <button className="primary-button">
-                            <span className="text-button-mobile">Konsultasi Gratis</span>
-                            <span>
-                                <FaAngleRight />
-                            </span>
-                        </button>
-                    </a>
-                    {/* <Link to="/paket" className="ml-4">
-                      <SecondaryBtn>
-                        <span className="text-button-mobile ">Lihat Penawaran</span>
-                        <span>
-                          <FaAngleRight />
-                        </span>
-                      </SecondaryBtn>
-                    </Link> */}
+            <div className="-mt-20 flex justify-center items-center">
+                <div className="flex flex-wrap">
+                    <div className="bg-white rounded-lg p-4 md:p-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                        <div className="p-2 grid grid-cols-1 gap-4 items-center">
+                            <div>
+                                <div className="text-gray-600 flex flex-col items-center">
+                                    <div className="w-12 h-12 mb-2 text-blue-600">
+                                        <FaReact size={50} />
+                                    </div>
+                                    <div className="text-xl font-medium text-center mt-2">
+                                        Software <br /> Development
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="p-2 grid grid-cols-1 gap-4 items-center">
+                            <div>
+                                <div className="text-gray-600 flex flex-col items-center">
+                                    <div className="w-12 h-12 mb-2 text-blue-600">
+                                        <FaLaptopHouse size={50} />
+                                    </div>
+                                    <div className="text-xl font-medium text-center">Start Up</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="p-2 grid grid-cols-1 gap-4 items-center">
+                            <div>
+                                <div className="text-gray-600 flex flex-col items-center">
+                                    <div className="w-12 h-12 mb-2 text-blue-600">
+                                        <FaHandshake size={50} />
+                                    </div>
+                                    <div className="text-xl font-medium text-center">Partner</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="p-2 grid grid-cols-1 gap-4 items-center">
+                            <div>
+                                <div className="text-gray-600 flex flex-col items-center">
+                                    <div className="w-12 h-12 mb-2 text-blue-600">
+                                        <FaInfo size={50} />
+                                    </div>
+                                    <div className="text-xl font-medium text-center">Sistem Informasi</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </motion.div>
-            <motion.div className="w-full md:w-1/2" initial={{ x: "100vw" }} animate={{ x: 0 }} transition={{ duration: 1 }}>
-                <div className="order-1 pt-10 lg:order-3 lg:pt-0 md:pt-0 sm:pt-0">
-                    <img src={bannerImg} alt="Banner MSN PRODUCTION"></img>
-                </div>
-            </motion.div>
-        </div>
+            </div>
+        </>
     );
 };
 

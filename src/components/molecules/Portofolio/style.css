@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+section {
+    @apply mb-28;
+}
+
+.portofolio-card:hover .img-hover {
+    @apply opacity-25;
+}

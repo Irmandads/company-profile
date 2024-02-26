@@ -1,7 +1,5 @@
 import React from "react";
-import { Banner, Service, Informasi } from "../../components";
-// import Paket from "../Paket";
-import Kontak from "../Kontak";
+import { Banner, Service, Diskusi, OurService } from "../../components";
 import About from "../../components/molecules/About";
 
 const Home = () => {
@@ -9,11 +7,10 @@ const Home = () => {
         <div className="pt-16">
             <Banner />
             <About />
+            <OurService />
             <Service />
-            {/* <Paket /> */}
-            {/* <Testimonial /> */}
-            <Informasi />
-            <Kontak />
+            {/* <Informasi /> */}
+            <Diskusi />
         </div>
     );
 };

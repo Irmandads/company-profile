@@ -23,20 +23,15 @@ const About = () => {
 
     return (
         <div className="py-20 parent bg-white">
-            <motion.div className="mb-12" initial="hidden" animate={viewDiv && "visible"} variants={headingAnimation}>
-                <h1 className="text-4xl font-bold text-center">
-                    About <span className="text-primary">Perusahaan</span>
-                </h1>
-            </motion.div>
-
-            <motion.div className="grid grid-cols-1 gap-20 mt-8 md:grid-cols-2" ref={ref} initial="hidden" animate={viewDiv && "visible"} variants={sectionBodyAnimation}>
-                <div>
+            <motion.div className="grid grid-cols-1 mt-8 md:grid-cols-2 lg:grid-rows-1" ref={ref} initial="hidden" animate={viewDiv && "visible"} variants={sectionBodyAnimation}>
+                <div className="ml-5">
                     <img className="rounded-lg shadow-md" src={AboutImage} alt="" style={{ width: "500px", height: "auto" }} />
                 </div>
                 <div className="">
-                    <p className="max-w-md font-medium text-accent text-xl">
+                    <p className="font-semibold text-2xl mb-4">Membangun aplikasi anda lewat kami</p>
+                    <p className="max-w-md font-normal text-accent text-lg">
                         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ab, ullam perspiciatis ipsum nobis iste voluptates vitae delectus amet odit modi. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magni, nam! Lorem
-                        ipsum dolor sit amet consectetur adipisicing elit. Officia, minima!
+                        ipsum dolor sit amet consectetur adipisicing elit. Officia, minima! Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, exercitationem?
                     </p>
                     <Link to="/tentang" className="ml-4">
                         <RoundedBtn color="base">

@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import Services from "../../../utils/Services";
-import { headingAnimation, sectionBodyAnimation } from "../../../hooks/useAnimation";
-// import { FaAngleRight } from "react-icons/fa";
-// import { BottomLine } from "../../../components";
+// import Services from "../../../utils/Services";
+import { sectionBodyAnimation } from "../../../hooks/useAnimation";
+import ProjectPortofolio from "../../../utils/Project";
+import { Link } from "react-router-dom";
+import { FaArrowRight } from "react-icons/fa";
 
 const Service = () => {
     const [ref, inView] = useInView();
@@ -19,32 +20,26 @@ const Service = () => {
         }
     }, [inView, animation]);
     return (
-        <div className="py-20 parent bg-white">
-            <motion.div className="mb-12" initial="hidden" animate={viewDiv && "visible"} variants={headingAnimation}>
-                <h1 className="text-4xl font-semibold text-center">
-                    Solusi <span className="text-primary">Digital & Kreatif</span>
-                </h1>
-                {/* <BottomLine /> */}
-                <h2 className="py-6 text-center text-accent">
-                    Kami fokus memberikan solusi holistik bagi bisnis Anda dalam membangun brand Anda secara Efektif & Konsisten melalui berbagai saluran Digital. Kami akan membantu Anda dalam mengembangkan bisnis sehingga tercapai tujuan
-                    Perusahaan Anda dengan lebih Efektif.
-                </h2>
-            </motion.div>
-
-            <motion.div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4" ref={ref} initial="hidden" animate={viewDiv && "visible"} variants={sectionBodyAnimation}>
-                {Services?.map((service) => (
-                    <div key={service.id} className={`${service.id % 2 === 0 ? "bg-white shadow-lg" : "bg-white shadow-lg"} rounded-lg p-6 duration-300`}>
-                        <div className="mb-4 text-center">
-                            <span className="inline-block text-5xl text-primary">{service.icon}</span>
-                        </div>
-                        <h2 className="mb-4 text-2xl font-semibold text-center">{service.title}</h2>
-                        <p className="text-accent">
-                            <span className="inline-block mb-4 text-justify text-gray-600 align-bottom">{service.description}</span>
-                        </p>
+        <>
+            <div className="py-20 parent bg-white">
+                <motion.div className="grid grid-cols-2 gap-1" ref={ref} initial="hidden" animate={viewDiv && "visible"} variants={sectionBodyAnimation}>
+                    <div className="text-7xl font-bold">Portofolio Kami</div>
+                    <div className="mr-16">
+                        <p className="font-medium">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos, aspernatur! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Recusandae, dolorum reprehenderit? Consequatur.</p>
+                        <Link to="/portofolio" className="italic flex items-center mt-3">
+                            <span>learn more</span>
+                            <FaArrowRight className="ml-1" />
+                        </Link>
                     </div>
-                ))}
-            </motion.div>
-        </div>
+                </motion.div>
+
+                <motion.div className="mt-9 grid grid-cols-3 gap-3" ref={ref} initial="hidden" animate={viewDiv && "visible"} variants={sectionBodyAnimation}>
+                    {ProjectPortofolio.slice(0, 3).map((data, i) => (
+                        <motion.div key={data.id}>{data.image}</motion.div>
+                    ))}
+                </motion.div>
+            </div>
+        </>
     );
 };
 
