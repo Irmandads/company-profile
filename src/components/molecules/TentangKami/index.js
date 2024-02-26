@@ -38,7 +38,7 @@ const Tentang = () => {
                         <p className="font-medium text-accent">
                             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tenetur mollitia, placeat consequuntur vitae dolorum repellat accusamus fugit alias illo, repellendus, ducimus debitis. Minima voluptatibus, veniam
                             consectetur minus ut, expedita excepturi odit placeat beatae id praesentium et quas. Voluptatem recusandae cupiditate vitae quas. Dolores porro non in saepe, nisi sit accusantium dolore consectetur sapiente,
-                            corrupti recusandae facilis numquam voluptatem, necessitatibus dicta. Vero culpa voluptatibus excepturi necessitatibus debitis ipsa in nemo suscipit omnis! Tempore ea qui a? Vitae, molestias quos!
+                            corrupti recusandae facilis numquam voluptatem, necessitatibus dicta. Vero culpa voluptatibus excepturi necessitatibus debitis ipsa in nemo suscipit omnis! Tempore ea qui a? Vitae, molestias quos! Lorem, ipsum dolor.
                         </p>
                         <br />
                         <p className="font-medium text-accent">
