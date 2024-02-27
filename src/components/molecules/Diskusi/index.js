@@ -19,7 +19,7 @@ const Diskusi = () => {
         }
     }, [inView, animation]);
     return (
-        <div className="mt-24 py-16 parent">
+        <div className="mt-20 py-16 parent">
             <motion.div ref={ref} initial="hidden" animate={viewDiv && "visible"} variants={sectionBodyAnimation}>
                 <RevealEffect bottom>
                     <section className="flex h-60 items-center container mx-auto justify-center">

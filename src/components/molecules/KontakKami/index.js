@@ -2,18 +2,19 @@ import React, { useEffect, useRef, useState } from "react";
 import "../../../pages/Kontak/Kontak.css";
 import "../../../pages/shared/Shared.css";
 import { motion, useAnimation } from "framer-motion";
-import { FaClock, FaPhoneAlt, FaLocationArrow } from "react-icons/fa";
+import { FaClock, FaPhoneAlt, FaLocationArrow, FaMapMarkerAlt } from "react-icons/fa";
 import { MdEmail, MdSend } from "react-icons/md";
 import emailjs from "@emailjs/browser";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
 import { useInView } from "react-intersection-observer";
-import { headingAnimation, kontakAnimation } from "../../../hooks/useAnimation";
+import { headingAnimation, kontakAnimation, sectionBodyAnimation } from "../../../hooks/useAnimation";
+import Map from "../Map";
 
 const KontakKami = () => {
     const navigate = useNavigate();
     const form = useRef();
-    const [inView] = useInView({ threshold: 0.3, triggerOnce: true });
+    const [ref, inView] = useInView({ threshold: 0.3, triggerOnce: true });
     const [viewDiv, setViewDiv] = useState(false);
     const animation = useAnimation();
 
@@ -47,51 +48,87 @@ const KontakKami = () => {
     };
 
     return (
-        <div className="mb-12 py-16 parent">
-            <motion.div className="" initial="hidden" animate={viewDiv && "visible"} variants={headingAnimation}>
-                <h1 className="text-3xl font-bold text-center">Hubungi Kami</h1>
-            </motion.div>
+        <>
+            <div className="mb-12 py-16 parent">
+                <motion.div className="" initial="hidden" animate={viewDiv && "visible"} variants={headingAnimation}>
+                    <h1 className="text-5xl font-bold text-center">Hubungi Kami</h1>
+                </motion.div>
 
-            <div className="container">
-                <div className="grid grid-cols-1 gap-20 mt-8 md:grid-cols-2">
-                    <motion.div className="" initial={{ y: 50, opacity: 0 }} animate={viewDiv && "visible"} variants={kontakAnimation}>
-                        <form ref={form} onSubmit={handleSend}>
-                            <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-6">
-                                <input className="input-field" type="text" name="name" id="name" placeholder="Nama" required />
-                                <input className="input-field" type="email" name="email" id="email" placeholder="Email" required />
+                <div className="container mt-16 px-20">
+                    {/* <div className="grid grid-cols-1 md:grid-cols-2"> */}
+                    <div className="flex flex-row w-full">
+                        <motion.div className="w-1/3 mr-7" ref={ref} initial="hidden" animate={viewDiv && "visible"} variants={sectionBodyAnimation}>
+                            <div className="card w-96 bg-base-100 shadow-xl">
+                                <div className="card-body items-center text-center">
+                                    <div className="flex flex-col items-center my-4">
+                                        <div className="text-4xl text-blue-700 mb-1">
+                                            <FaMapMarkerAlt />
+                                        </div>
+                                        <div className="font-medium text-gray-500">jalan menyusul</div>
+                                    </div>
+                                    <div className="flex flex-col items-center my-4">
+                                        <div className="text-4xl text-blue-700 mb-1">
+                                            <FaPhoneAlt />
+                                        </div>
+                                        <div className="font-medium text-primary text-2xl">Phone</div>
+                                        <div className="font-medium text-gray-500">+62 812 5678 8858</div>
+                                    </div>
+                                    <div className="flex flex-col items-center my-4">
+                                        <div className="text-4xl text-blue-700 mb-1">
+                                            <MdEmail />
+                                        </div>
+                                        <div className="font-medium text-primary text-2xl">Email</div>
+                                        <div className="font-medium text-gray-500">socsatellite@gmail.com</div>
+                                    </div>
+                                    <div className="flex flex-col items-center my-4">
+                                        <div className="text-4xl text-blue-700 mb-1">
+                                            <FaClock />
+                                        </div>
+                                        <div className="font-semibold text-primary text-2xl">Jam Operasi</div>
+                                        <div className="font-medium text-gray-500">Senin – Jum'at, 09:00 – 17:00</div>
+                                    </div>
+                                </div>
                             </div>
-                            <input className="input-field" type="text" name="subject" id="subject" placeholder="Subjek" required />
-                            <textarea className="input-field" name="message" id="message" cols="30" rows="5" placeholder="Pesan" required></textarea>
-                            <button type="submit" value="Send Message" className="primary-button">
-                                <span>Kirim</span>
-                                <span>
-                                    <MdSend />
-                                </span>
-                            </button>
-                        </form>
-                    </motion.div>
+                        </motion.div>
 
-                    <motion.div className="" initial={{ y: 50, opacity: 0 }} animate={viewDiv && "visible"} variants={kontakAnimation}>
-                        <div className="flex items-center my-6">
-                            <FaPhoneAlt className="mr-8 text-2xl duration-300 cursor-pointer hover:text-primary"></FaPhoneAlt>
-                            <h3 className="font-medium text-primary">+62 812 5678 8858</h3>
-                        </div>
-                        <div className="flex items-center my-6">
-                            <MdEmail className="mr-8 text-3xl duration-300 cursor-pointer hover:text-primary"></MdEmail>
-                            <h3 className="font-medium text-primary">socsatellite@gmail.com</h3>
-                        </div>
-                        <div className="flex items-center my-6">
-                            <FaClock className="mr-8 text-2xl duration-300 cursor-pointer hover:text-primary"></FaClock>
-                            <h3 className="font-medium text-primary">Senin – Jum'at, 09:00 – 17:00</h3>
-                        </div>
-                        <div className="flex items-center my-6">
-                            <FaLocationArrow className="mr-8 text-3xl duration-300 cursor-pointer hover:text-primary"></FaLocationArrow>
-                            <h3 className="font-medium text-primary">Jalan menyusul</h3>
-                        </div>
-                    </motion.div>
+                        <motion.div className="w-2/3 ml-4" ref={ref} initial="hidden" animate={viewDiv && "visible"} variants={sectionBodyAnimation}>
+                            <div className="font-bold text-2xl mb-3">Send us a message</div>
+                            <div className="text-gray-500">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe minima nemo ratione possimus, explicabo quas tempore laudantium, debitis eaque accusamus nihil distinctio, eligendi quis repudiandae?
+                            </div>
+                            <form ref={form} onSubmit={handleSend}>
+                                <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-6 my-4">
+                                    <div>
+                                        <input type="text" placeholder="name" name="name" id="name" className="input input-bordered w-full max-w-xs" required />
+                                    </div>
+                                    <div>
+                                        <input type="email" placeholder="email" name="email" id="email" className="input input-bordered w-full" required />
+                                    </div>
+                                </div>
+                                <div className="mt-4">
+                                    <input type="text" placeholder="subject" name="subject" id="subject" className="input input-bordered w-full" required />
+                                </div>
+                                <div className="mt-4">
+                                    <textarea className="textarea textarea-bordered w-full" placeholder="your message" name="message" id="message" cols="30" rows="5" required></textarea>
+                                </div>
+                                <div>
+                                    <button type="submit" value="Send Message" className="button btn btn-primary w-full mt-4">
+                                        <span className="mr-2 text-white font-semibold">Kirim</span>
+                                        <span className="text-white font-semibold">
+                                            <MdSend />
+                                        </span>
+                                    </button>
+                                </div>
+                            </form>
+                        </motion.div>
+                    </div>
+                </div>
+
+                <div className="mt-9">
+                    <Map />
                 </div>
             </div>
-        </div>
+        </>
     );
 };
 

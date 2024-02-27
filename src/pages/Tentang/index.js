@@ -1,5 +1,5 @@
 import React from "react";
-import { TentangKami } from "../../components";
+import { Diskusi, TentangKami } from "../../components";
 import Alasan from "../../components/molecules/Alasan";
 
 const Tentang = () => {
@@ -9,6 +9,7 @@ const Tentang = () => {
       {/* <VisiMisi /> */}
       {/* <Tim /> */}
       <Alasan />
+      <Diskusi />
     </div>
   );
 };

@@ -7,8 +7,9 @@ import { FaAngleDoubleRight, FaAngleDoubleLeft } from "react-icons/fa";
 // import { BottomLine } from "../../../components";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { headingAnimation, sectionBodyAnimation } from "../../../hooks/useAnimation";
-import ABack from "../../../assets/images/background/download.jpeg";
+import { sectionBodyAnimation } from "../../../hooks/useAnimation";
+import NavBlog from "../BackBlog";
+// import ABack from "../../../assets/images/background/download.jpeg";
 
 const BlogIndex = () => {
     const [currentPage, setCurrentPage] = useState(1);
@@ -44,17 +45,8 @@ const BlogIndex = () => {
 
     return (
         <>
-            <motion.div className="flex flex-col items-center" initial="hidden" animate={viewDiv && "visible"} variants={headingAnimation}>
-                <div className="relative">
-                    <img src={ABack} alt="Background" className="flex justify-center w-full" style={{ filter: "brightness(70%)" }} />
-                    <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" style={{ width: "100%" }}>
-                        <motion.div className="text-center" initial={{ opacity: 0, y: 50 }} animate={{ opacity: viewDiv ? 1 : 0, y: viewDiv ? 0 : 50 }} transition={{ duration: 1 }}>
-                            <h2 className="text-white text-6xl font-bold">Informasi Terbaru</h2>
-                            <p className="text text-white text-lg mt-2">Solusi tercepat untuk anda yang membutuhkan aplikasi</p>
-                        </motion.div>
-                    </div>
-                </div>
-            </motion.div>
+            <NavBlog />
+
             <div className="py-16 parent">
                 <div className="mt-10">
                     <motion.div className="grid grid-cols-1 gap-8 md:grid-cols-3" ref={ref} initial="hidden" animate={viewDiv && "visible"} variants={sectionBodyAnimation}>

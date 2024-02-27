@@ -1,4 +1,5 @@
 import Banner from './Banner';
+import NavBlog from './BackBlog';
 import BlogDetail from './BlogDetail';
 import BlogIndex from './BlogIndex';
 import Diskusi from './Diskusi';
@@ -17,6 +18,6 @@ import Tim from './Tim';
 import VisiMisi from './VisiMisi';
 
 export {
-    Banner, BlogDetail, BlogIndex, Diskusi, Footer, Informasi, KontakKami, Loader, Map, Navbar,
+    NavBlog, Banner, BlogDetail, BlogIndex, Diskusi, Footer, Informasi, KontakKami, Loader, Map, Navbar,
     NotFound, OurService, Service, TentangKami, Testimonial, Tim, VisiMisi
 };

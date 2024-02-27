@@ -22,7 +22,7 @@ const Map = () => (
         <ZoomControl position="bottomright" />
         <Marker position={position}>
             <Popup>
-                MSN PRODUCTION
+                Satellite Orbit Community
             </Popup>
         </Marker>
     </MapContainer>
