@@ -4,6 +4,7 @@ import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { headingAnimation, sectionBodyAnimation } from "../../../hooks/useAnimation";
 import ABack from "../../../assets/images/background/download.jpeg";
+import AboutImg from "../../../assets/images/about-company.jpeg";
 
 const Tentang = () => {
     const [ref, inView] = useInView();
@@ -31,23 +32,20 @@ const Tentang = () => {
                 </div>
             </motion.div>
             <div className="my-16 parent">
-                <div className="">
-                    <motion.div className="mt-35" ref={ref} initial="hidden" animate={viewDiv && "visible"} variants={sectionBodyAnimation}>
-                        <h1 className="text-5xl mt-10 mb-5 font-bold drop-shadow-md">Tentang Kami</h1>
-                        <br />
-                        <p className="font-medium text-accent">
-                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tenetur mollitia, placeat consequuntur vitae dolorum repellat accusamus fugit alias illo, repellendus, ducimus debitis. Minima voluptatibus, veniam
-                            consectetur minus ut, expedita excepturi odit placeat beatae id praesentium et quas. Voluptatem recusandae cupiditate vitae quas. Dolores porro non in saepe, nisi sit accusantium dolore consectetur sapiente,
-                            corrupti recusandae facilis numquam voluptatem, necessitatibus dicta. Vero culpa voluptatibus excepturi necessitatibus debitis ipsa in nemo suscipit omnis! Tempore ea qui a? Vitae, molestias quos! Lorem, ipsum dolor.
-                        </p>
-                        <br />
-                        <p className="font-medium text-accent">
-                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tenetur mollitia, placeat consequuntur vitae dolorum repellat accusamus fugit alias illo, repellendus, ducimus debitis. Minima voluptatibus, veniam
-                            consectetur minus ut, expedita excepturi odit placeat beatae id praesentium et quas. Voluptatem recusandae cupiditate vitae quas. Dolores porro non in saepe, nisi sit accusantium dolore consectetur sapiente,
-                            corrupti recusandae facilis numquam voluptatem, necessitatibus dicta. Vero culpa voluptatibus excepturi necessitatibus debitis ipsa in nemo suscipit omnis! Tempore ea qui a? Vitae, molestias quos!
-                        </p>
-                    </motion.div>
-                </div>
+                {/* bagian ke-2 */}
+                <motion.div className="flex mt-10" ref={ref} initial="hidden" animate={viewDiv && "visible"} variants={sectionBodyAnimation}>
+                    <div className="w-2/5">
+                        <img className="rounded-lg" src={AboutImg} alt="" />
+                    </div>
+                    <div className="w-3/5 ml-9">
+                        <div className="font-bold text-4xl text-primary">Solusi untuk anda</div>
+                        <div className="font-semibold text-gray-500 mt-4">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum facilis nostrum velit omnis animi ipsa temporibus culpa laborum mollitia excepturi? Molestiae deserunt ad aliquid eum architecto molestias voluptatibus
+                            debitis ratione. <br /> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quo, architecto! Optio atque dolore saepe accusamus consectetur rerum? Fugiat sit perspiciatis consequatur animi repudiandae
+                            repellendus harum? Molestiae aspernatur officiis debitis similique!
+                        </div>
+                    </div>
+                </motion.div>
             </div>
         </>
     );
