@@ -21,7 +21,7 @@ const OurService = () => {
     }, [inView, animation]);
     return (
         <div className="py-20 my-20 parent">
-            <div className="grid grid-cols-2 gap-1">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <motion.div className="grid grid-rows-2 grid-flow-col gap-4 mr-4" ref={ref} initial="hidden" animate={viewDiv && "visible"} variants={sectionBodyAnimation}>
                     {DetailLayanan.slice(0, 4).map((data, i) => (
                         <div key={data.id} className="flex flex-col items-center mb-4">

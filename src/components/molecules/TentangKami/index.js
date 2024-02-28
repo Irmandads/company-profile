@@ -33,11 +33,11 @@ const Tentang = () => {
             </motion.div>
             <div className="my-16 parent">
                 {/* bagian ke-2 */}
-                <motion.div className="flex mt-10" ref={ref} initial="hidden" animate={viewDiv && "visible"} variants={sectionBodyAnimation}>
-                    <div className="w-2/5">
+                <motion.div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10" ref={ref} initial="hidden" animate={viewDiv && "visible"} variants={sectionBodyAnimation}>
+                    <div className="md:order-2">
                         <img className="rounded-lg" src={AboutImg} alt="" />
                     </div>
-                    <div className="w-3/5 ml-9">
+                    <div className="md:order-1">
                         <div className="font-bold text-4xl text-primary">Solusi untuk anda</div>
                         <div className="font-semibold text-gray-500 mt-4">
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum facilis nostrum velit omnis animi ipsa temporibus culpa laborum mollitia excepturi? Molestiae deserunt ad aliquid eum architecto molestias voluptatibus

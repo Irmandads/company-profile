@@ -35,32 +35,28 @@ const Project = () => {
                     </div>
                 </div>
             </motion.div>
-            <div className="pt-2 my-16 parent">
-                <div>
-                    <motion.div className="my-20" ref={ref} initial="hidden" animate={viewDiv && "visible"} variants={sectionBodyAnimation}>
-                        {ProjectPortofolio?.map((project) => (
-                            <div key={project.id} className={`${project.id % 2 === 0 ? "bg-white" : "bg-white"} rounded-lg my-3 p-6 duration-300`}>
-                                <motion.div className="grid grid-cols-1 mt-8 md:grid-cols-2" ref={ref} initial="hidden" animate={viewDiv && "visible"} variants={sectionBodyAnimation}>
-                                    <div className="ml-10">{project.image}</div>
-                                    <div className="mr-3">
-                                        <h2 className="mb-4 text-xl font-semibold">{project.title}</h2>
-                                        <p className="text-accent">
-                                            <span className="inline-block mb-4 text-justify text-gray-600 align-bottom">{project.description}</span>
-                                        </p>
-                                        <Link to="" className="ml-4">
-                                            <RoundedBtn color="base">
-                                                <span className="tex-button-mobile">kunjungi website</span>
-                                                <span>
-                                                    <FaAngleRight />
-                                                </span>
-                                            </RoundedBtn>
-                                        </Link>
-                                    </div>
-                                </motion.div>
-                            </div>
-                        ))}
-                    </motion.div>
-                </div>
+            <div className="pt-2 my-10 parent">
+                <motion.div className="my-20 grid gap-6" ref={ref} initial="hidden" animate={viewDiv && "visible"} variants={sectionBodyAnimation}>
+                    {ProjectPortofolio?.map((project) => (
+                        <div key={project.id} className={`bg-white rounded-lg p-6 duration-300`}>
+                            <motion.div className="grid grid-cols-1 md:grid-cols-2 gap-6" ref={ref} initial="hidden" animate={viewDiv && "visible"} variants={sectionBodyAnimation}>
+                                <div className="md:order-2 flex items-center justify-center">{project.image}</div>
+                                <div className="md:order-1">
+                                    <h2 className="mb-4 text-xl font-semibold">{project.title}</h2>
+                                    <p className="text-accent mb-4">{project.description}</p>
+                                    <Link to="" className="inline-block">
+                                        <RoundedBtn color="base">
+                                            <span className="tex-button-mobile">kunjungi website</span>
+                                            <span>
+                                                <FaAngleRight />
+                                            </span>
+                                        </RoundedBtn>
+                                    </Link>
+                                </div>
+                            </motion.div>
+                        </div>
+                    ))}
+                </motion.div>
             </div>
         </>
     );

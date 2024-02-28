@@ -23,9 +23,9 @@ const About = () => {
 
     return (
         <div className="py-20 parent bg-white">
-            <motion.div className="grid grid-cols-1 mt-8 md:grid-cols-2 lg:grid-rows-1" ref={ref} initial="hidden" animate={viewDiv && "visible"} variants={sectionBodyAnimation}>
-                <div className="ml-5">
-                    <img className="rounded-lg shadow-md" src={AboutImage} alt="" style={{ width: "500px", height: "auto" }} />
+            <motion.div className="grid grid-cols-1 mt-8 md:grid-cols-auto-fill md:grid-cols-2 lg:grid-rows-1 gap-5" ref={ref} initial="hidden" animate={viewDiv && "visible"} variants={sectionBodyAnimation}>
+                <div className="mr-5">
+                    <img className="rounded-lg shadow-md w-full" src={AboutImage} alt="" />
                 </div>
                 <div className="">
                     <p className="font-semibold text-2xl mb-4">Membangun aplikasi anda lewat kami</p>

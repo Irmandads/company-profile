@@ -22,9 +22,9 @@ const Service = () => {
     return (
         <>
             <div className="py-20 parent bg-white">
-                <motion.div className="grid grid-cols-2 gap-1" ref={ref} initial="hidden" animate={viewDiv && "visible"} variants={sectionBodyAnimation}>
-                    <div className="text-7xl font-bold">Portofolio Kami</div>
-                    <div className="mr-16">
+                <motion.div className="grid grid-cols-1 md:grid-cols-2 gap-4" ref={ref} initial="hidden" animate={viewDiv && "visible"} variants={sectionBodyAnimation}>
+                    <div className="text-4xl md:text-7xl font-bold">Portofolio Kami</div>
+                    <div className="md:mr-16">
                         <p className="font-medium">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos, aspernatur! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Recusandae, dolorum reprehenderit? Consequatur.</p>
                         <Link to="/portofolio" className="italic flex items-center mt-3">
                             <span>learn more</span>

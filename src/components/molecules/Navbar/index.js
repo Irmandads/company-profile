@@ -51,18 +51,15 @@ export default function Navbar() {
     }, [lastScrollY]);
 
     return (
-        <div
-            className={`visible ${show && "nav-hidden"} shadow-lg bg-slate-50  
-     z-100`}
-        >
+        <div className={`visible ${show && "nav-hidden"} shadow-lg bg-slate-50 z-100`}>
             <div className="flex items-center justify-between w-full px-3 py-3 md:px-24">
                 <div>
                     <Link to="/">
                         <img className="w-36 pr-10" src={logo} alt="logoo" />
                     </Link>
                 </div>
-                <div>
-                    <ul className="items-center hidden lg:flex">
+                <div className="flex items-center">
+                    <ul className="hidden lg:flex">
                         {navLinks.map((navItem) => (
                             <li className="mx-4" key={navItem.title}>
                                 <NavLink to={navItem.link} style={activeLink} className="duration-300 text-accent hover:text-primary">
@@ -73,26 +70,26 @@ export default function Navbar() {
                     </ul>
                     <div className="block lg:hidden">
                         <button onClick={toggleDrawer} className="hover:text-primary">
-                            <FaBars></FaBars>
+                            <FaBars />
                         </button>
-                        <Drawer open={isOpen} onClose={toggleDrawer} direction="right" style={{ backgroundColor: "#e5e7eb" }} className="flex flex-col justify-between pb-4 bla">
-                            <ul className="">
-                                <li className="mt-6 mb-10 ml-4">
-                                    <ImCross className="duration-300 cursor-pointer hover:text-primary" onClick={() => setIsOpen(!isOpen)}></ImCross>
-                                </li>
-                                {navLinks.map((navItem) => (
-                                    <li className="m-4" key={navItem.title} onClick={() => setIsOpen(!isOpen)}>
-                                        <NavLink to={navItem.link} style={activeLink} className="flex items-center duration-300 text-accent hover:text-primary">
-                                            <span className="mr-3">{navItem.icon}</span>
-                                            <span>{navItem.title}</span>
-                                        </NavLink>
-                                    </li>
-                                ))}
-                            </ul>
-                        </Drawer>
                     </div>
                 </div>
             </div>
+            <Drawer open={isOpen} onClose={toggleDrawer} direction="right" style={{ backgroundColor: "#e5e7eb" }} className="flex flex-col justify-between pb-4 bla">
+                <ul className="">
+                    <li className="mt-6 mb-10 ml-4">
+                        <ImCross className="duration-300 cursor-pointer hover:text-primary" onClick={() => setIsOpen(!isOpen)} />
+                    </li>
+                    {navLinks.map((navItem) => (
+                        <li className="m-4" key={navItem.title} onClick={() => setIsOpen(!isOpen)}>
+                            <NavLink to={navItem.link} style={activeLink} className="flex items-center duration-300 text-accent hover:text-primary">
+                                <span className="mr-3">{navItem.icon}</span>
+                                <span>{navItem.title}</span>
+                            </NavLink>
+                        </li>
+                    ))}
+                </ul>
+            </Drawer>
         </div>
     );
 }

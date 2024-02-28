@@ -54,11 +54,10 @@ const KontakKami = () => {
                     <h1 className="text-5xl font-bold text-center">Hubungi Kami</h1>
                 </motion.div>
 
-                <div className="container mt-16 px-20">
-                    {/* <div className="grid grid-cols-1 md:grid-cols-2"> */}
-                    <div className="flex flex-row w-full">
-                        <motion.div className="w-1/3 mr-7" ref={ref} initial="hidden" animate={viewDiv && "visible"} variants={sectionBodyAnimation}>
-                            <div className="card w-96 bg-base-100 shadow-xl">
+                <motion.div className="container mt-16 px-4 md:px-0 md:px-20">
+                    <div className="flex flex-col md:flex-row w-full">
+                        <motion.div className="w-full md:w-1/3 mb-8 md:mr-7" ref={ref} initial="hidden" animate={viewDiv && "visible"} variants={sectionBodyAnimation}>
+                            <div className="card w-full bg-base-100 shadow-xl">
                                 <div className="card-body items-center text-center">
                                     <div className="flex flex-col items-center my-4">
                                         <div className="text-4xl text-blue-700 mb-1">
@@ -91,20 +90,21 @@ const KontakKami = () => {
                             </div>
                         </motion.div>
 
-                        <motion.div className="w-2/3 ml-4" ref={ref} initial="hidden" animate={viewDiv && "visible"} variants={sectionBodyAnimation}>
+                        <motion.div className="w-full md:w-2/3 ml-0 md:ml-4" ref={ref} initial="hidden" animate={viewDiv && "visible"} variants={sectionBodyAnimation}>
                             <div className="font-bold text-2xl mb-3">Send us a message</div>
                             <div className="text-gray-500">
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe minima nemo ratione possimus, explicabo quas tempore laudantium, debitis eaque accusamus nihil distinctio, eligendi quis repudiandae?
                             </div>
                             <form ref={form} onSubmit={handleSend}>
-                                <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-6 my-4">
+                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 my-4">
                                     <div>
-                                        <input type="text" placeholder="name" name="name" id="name" className="input input-bordered w-full max-w-xs" required />
+                                        <input type="text" placeholder="name" name="name" id="name" className="input input-bordered w-full sm:max-w-xs" required />
                                     </div>
                                     <div>
-                                        <input type="email" placeholder="email" name="email" id="email" className="input input-bordered w-full" required />
+                                        <input type="email" placeholder="email" name="email" id="email" className="input input-bordered w-full sm:max-w-xs" required />
                                     </div>
                                 </div>
+
                                 <div className="mt-4">
                                     <input type="text" placeholder="subject" name="subject" id="subject" className="input input-bordered w-full" required />
                                 </div>
@@ -122,7 +122,7 @@ const KontakKami = () => {
                             </form>
                         </motion.div>
                     </div>
-                </div>
+                </motion.div>
 
                 <div className="mt-9">
                     <Map />

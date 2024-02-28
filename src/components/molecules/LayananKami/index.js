@@ -34,9 +34,9 @@ const LayananKami = () => {
                 </div>
             </motion.div>
 
-            <div className="mt-12 py-16 parent">
-                <motion.div className="mt-16" ref={ref} initial="hidden" animate={viewDiv && "visible"} variants={sectionBodyAnimation}>
-                    <div className="grid grid-cols-1 sm:grid-cols-4 gap-8">
+            <div className="mt-20 py-16 parent">
+                <motion.div className="" ref={ref} initial="hidden" animate={viewDiv && "visible"} variants={sectionBodyAnimation}>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 mb-32 md:grid-cols-2 lg:grid-cols-4 h-28 gap-8">
                         {DetailLayanan.map((data, i) => (
                             <RevealEffect effect="fadeInUp" duration={500} delay={500 * i} key={data.id}>
                                 <div className="bg-white group rounded-2xl shadow-2xl border border-light-theme-purple transform transition duration-500 hover:scale-105 flex flex-col items-center justify-center p-8">
