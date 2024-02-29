@@ -19,8 +19,8 @@ const Kontak = () => {
     }, [inView, animation]);
 
     return (
-        <>
-            <motion.div className="flex flex-col items-center" initial="hidden" animate={viewDiv && "visible"} variants={headingAnimation}>
+        <div className="pt-16">
+            <motion.div className="mb-12 flex flex-col items-center" initial="hidden" animate={viewDiv && "visible"} variants={headingAnimation}>
                 <div className="relative">
                     <img src={ABack} alt="Background" className="flex justify-center w-full" style={{ filter: "brightness(70%)" }} />
                     <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" style={{ width: "100%" }}>
@@ -35,7 +35,7 @@ const Kontak = () => {
             <div className="-mt-24">
                 <KontakKami />
             </div>
-        </>
+        </div>
     );
 };
 

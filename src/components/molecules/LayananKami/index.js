@@ -22,7 +22,7 @@ const LayananKami = () => {
 
     return (
         <>
-            <motion.div className="-mt-10 flex flex-col items-center" initial="hidden" animate={viewDiv && "visible"} variants={headingAnimation}>
+            <motion.div className="mb-12 flex flex-col items-center" initial="hidden" animate={viewDiv && "visible"} variants={headingAnimation}>
                 <div className="relative">
                     <img src={ABack} alt="Background" className="flex justify-center w-full" style={{ filter: "brightness(70%)" }} />
                     <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" style={{ width: "100%" }}>
@@ -36,7 +36,7 @@ const LayananKami = () => {
 
             <div className="mt-20 py-16 parent">
                 <motion.div className="" ref={ref} initial="hidden" animate={viewDiv && "visible"} variants={sectionBodyAnimation}>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 mb-32 md:grid-cols-2 lg:grid-cols-4 h-28 gap-8">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 mb-32 md:grid-cols-2 lg:grid-cols-4 h-40 gap-8">
                         {DetailLayanan.map((data, i) => (
                             <RevealEffect effect="fadeInUp" duration={500} delay={500 * i} key={data.id}>
                                 <div className="bg-white group rounded-2xl shadow-2xl border border-light-theme-purple transform transition duration-500 hover:scale-105 flex flex-col items-center justify-center p-8">
