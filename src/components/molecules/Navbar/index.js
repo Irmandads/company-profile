@@ -52,10 +52,10 @@ export default function Navbar() {
 
     return (
         <div className={`visible ${show && "nav-hidden"} shadow-lg bg-slate-50 z-100`}>
-            <div className="flex items-center justify-between w-full px-3 py-3 md:px-24">
+            <div className="flex items-center justify-between w-full px-3 py-3 md:px-24 ">
                 <div>
                     <Link to="/">
-                        <img className="w-36 pr-10" src={logo} alt="logoo" />
+                        <img className="w-28 pr-10" src={logo} alt="logoo" />
                     </Link>
                 </div>
                 <div className="flex items-center">

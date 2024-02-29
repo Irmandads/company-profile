@@ -30,7 +30,7 @@ const Project = () => {
                     <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" style={{ width: "100%" }}>
                         <motion.div className="text-center" initial={{ opacity: 0, y: 50 }} animate={{ opacity: viewDiv ? 1 : 0, y: viewDiv ? 0 : 50 }} transition={{ duration: 1 }}>
                             <h2 className="text-white text-6xl font-bold">Portofolio</h2>
-                            <p className="text text-white text-lg mt-3">Deskripsi atau teks tambahan di atas gambar.</p>
+                            <p className="text text-white text-lg mt-3">Solusi untuk anda yang membutuhkan bantuan kami</p>
                         </motion.div>
                     </div>
                 </div>
@@ -65,3 +65,4 @@ const Project = () => {
 export default Project;
 // satellite orbit comunity
 // socsatellite@gmail.com
+// Solusi untuk anda yang membutuhkan bantuan kami
