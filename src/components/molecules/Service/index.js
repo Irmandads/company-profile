@@ -38,7 +38,7 @@ const Service = () => {
                 <motion.div className="mt-9 grid grid-cols-1 sm:grid-cols-1 mb-3 md:grid-cols-3 gap-4" ref={ref} initial="hidden" animate={viewDiv && "visible"} variants={sectionBodyAnimation}>
                     {ProjectPortofolio.slice(0, 3).map((data, i) => (
                         <motion.div key={data.id} whileHover={{ scale: 1.05 }}>
-                            {data.image}
+                            <img src={data.image} alt={data.title}  className="rounded-lg"/>
                         </motion.div>
                     ))}
                 </motion.div>
