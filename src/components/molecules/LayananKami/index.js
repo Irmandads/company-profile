@@ -5,7 +5,6 @@ import { useInView } from "react-intersection-observer";
 import { headingAnimation, sectionBodyAnimation } from "../../../hooks/useAnimation";
 import ABack from "../../../assets/images/background/download.jpeg";
 import DetailLayanan from "../../../utils/Layanan";
-import { RevealEffect } from "react-reveal-effect";
 
 const LayananKami = () => {
     const [ref, inView] = useInView();
