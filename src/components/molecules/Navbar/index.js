@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { FaBars } from "react-icons/fa";
-import logo from "../../../assets/images/logo.png";
+import logo from "../../../assets/images/logo/logo.png";
 import { ImCross } from "react-icons/im";
 import Drawer from "react-modern-drawer";
 import "react-modern-drawer/dist/index.css";
@@ -55,7 +55,7 @@ export default function Navbar() {
             <div className="flex items-center justify-between w-full px-3 py-3 md:px-24 ">
                 <div>
                     <Link to="/">
-                        <img className="w-28 pr-10" src={logo} alt="logoo" />
+                        <img className="w-24 pr-10" src={logo} alt="logoo" />
                     </Link>
                 </div>
                 <div className="flex items-center">

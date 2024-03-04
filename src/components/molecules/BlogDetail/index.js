@@ -16,7 +16,7 @@ const BlogDetail = () => {
     const [blog, setBlog] = useState({});
     const url = window.location.href;
 
-    const [ref, inView] = useInView();
+    const [inView] = useInView();
     const [viewDiv, setViewDiv] = useState(false);
     const animation = useAnimation();
 

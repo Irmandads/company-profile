@@ -42,8 +42,8 @@ const Project = () => {
                             <motion.div className="grid grid-cols-1 md:grid-cols-2 gap-6" ref={ref} initial="hidden" animate={viewDiv && "visible"} variants={sectionBodyAnimation}>
                                 <div className="md:order-2 flex items-center justify-center">{project.image}</div>
                                 <div className="md:order-1">
-                                    <h2 className="mb-4 text-xl font-semibold">{project.title}</h2>
-                                    <p className="text-accent mb-4">{project.description}</p>
+                                    <h2 className="mb-4 text-xl font-semibold text-primary">{project.title}</h2>
+                                    <p className="text-accent mb-4 text-gray-500">{project.description}</p>
                                     <Link to="" className="inline-block">
                                         <RoundedBtn color="base">
                                             <span className="tex-button-mobile">kunjungi website</span>

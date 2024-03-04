@@ -35,17 +35,33 @@ const LayananKami = () => {
             </motion.div>
 
             <div className="mt-20 py-16 parent">
-                <motion.div className="" ref={ref} initial="hidden" animate={viewDiv && "visible"} variants={sectionBodyAnimation}>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 mb-32 md:grid-cols-2 lg:grid-cols-4 h-40 gap-8">
-                        {DetailLayanan.map((data, i) => (
-                            <RevealEffect effect="fadeInUp" duration={500} delay={500 * i} key={data.id}>
-                                <div className="bg-white group rounded-2xl shadow-2xl border border-light-theme-purple transform transition duration-500 hover:scale-105 flex flex-col items-center justify-center p-8">
-                                    <div className="w-12 h-12 mb-2 text-blue-600 text-4xl">{data.icon}</div>
-                                    <h2 className="text-theme-blue text-center text-xl">{data.title}</h2>
-                                </div>
-                            </RevealEffect>
-                        ))}
-                    </div>
+                <motion.div className="grid grid-cols-1 sm:grid-cols-2 mb-32 md:grid-cols-2 lg:grid-cols-4 h-40 gap-8" ref={ref} initial="hidden" animate={viewDiv && "visible"} variants={sectionBodyAnimation}>
+                    {DetailLayanan.map((data, i) => (
+                        <motion.div
+                            key={data.id}
+                            className="bg-white group relative rounded-2xl h-72 shadow-2xl border border-light-theme-purple transform transition duration-500 hover:scale-105 flex flex-col items-center justify-center p-8"
+                            initial="hidden"
+                            animate={viewDiv && "visible"}
+                            variants={{
+                                hidden: { opacity: 0, y: 50 },
+                                visible: {
+                                    opacity: 1,
+                                    y: 0,
+                                    transition: {
+                                        delay: i * 1,
+                                    },
+                                },
+                            }}
+                            whileHover={{ scale: 1.1 }}
+                        >
+                            <div className="flex items-center mb-2">
+                                <div className="w-12 h-12 mr-2 text-blue-600 text-4xl">{data.icon}</div>
+                                <h2 className="text-theme-blue text-xl text-primary font-bold">{data.title}</h2>
+                            </div>
+
+                            <div className="text-gray-500 text-center mt-3">{data.description}</div>
+                        </motion.div>
+                    ))}
                 </motion.div>
             </div>
         </>

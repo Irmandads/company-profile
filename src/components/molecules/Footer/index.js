@@ -1,5 +1,5 @@
 import React from "react";
-import Logoo from "../../../assets/images/logo.png";
+import Logoo from "../../../assets/images/logo/logo.png";
 import { Link } from "react-router-dom";
 import { FaPhoneAlt, FaLinkedin, FaFacebookSquare, FaTwitterSquare, FaInstagramSquare, FaMapMarkedAlt } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
@@ -10,9 +10,9 @@ const Footer = () => {
         <div>
             <footer className="p-20 footer text-base-100" style={{ backgroundColor: "#e5e7eb" }}>
                 <div>
-                    <Link to="/">
+                    {/* <Link to="/">
                         <img src={Logoo} alt="SATELLITE ORBIT COMMUNITY" className="w-20 sm:w-46" />
-                    </Link>
+                    </Link> */}
                     <h1 className="text-2xl font-bold text-black ">SATELLITE ORBIT COMMUNITY</h1>
                     <span className="text-accent">
                         jasa pembuatan website terbaik <br />

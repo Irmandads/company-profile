@@ -3,7 +3,6 @@ import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { headingAnimation, sectionBodyAnimation } from "../../../hooks/useAnimation";
 import PilihKami from "../../../utils/PilihKami";
-import { RevealEffect } from "react-reveal-effect";
 
 const Alasan = () => {
     const [ref, inView] = useInView();
@@ -29,7 +28,7 @@ const Alasan = () => {
                     {PilihKami.map((data, i) => (
                         <motion.div
                             key={data.id}
-                            className="bg-white group rounded-2xl h-72 shadow-2xl border border-light-theme-purple transform transition duration-500 hover:scale-105 flex flex-col items-center justify-center p-8"
+                            className="bg-white group relative rounded-2xl h-72 shadow-2xl border border-light-theme-purple transform transition duration-500 hover:scale-105 flex flex-col items-center justify-center p-8"
                             initial="hidden"
                             animate={viewDiv && "visible"}
                             variants={{
@@ -42,6 +41,7 @@ const Alasan = () => {
                                     },
                                 },
                             }}
+                            whileHover={{ scale: 1.10 }}
                         >
                             <div className="mb-4 text-center">
                                 <span className="inline-block text-5xl text-primary">{data.icon}</span>

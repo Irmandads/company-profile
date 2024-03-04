@@ -19,7 +19,7 @@ const Banner = () => {
             >
                 <motion.div className="parent min-h-[100vh] flex flex-col-reverse lg:flex-row items-center justify-between" initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 0.5 }}>
                     <div className="col-md-6" data-aos="fade-up">
-                        <h1 className="mb-4 text-4xl lg:text-6xl font-bold text-white">SATELLITE ORBIT COMMUNITY</h1>
+                        <h1 className="mb-4 text-4xl lg:text-6xl font-bold text-white">YOUR COMPANY</h1>
                         <p className="max-w-md lg:max-w-lg mb-10 font-medium text-white">
                             Satellite Orbit Community adalah perusahaan yang menyediakan layanan jasa pembuatan Website, Aplikasi Mobile, Branding & Konten Kreatif untuk anda yang ingin membangun sebuah perusahaan.
                         </p>

@@ -28,8 +28,8 @@ const About = () => {
                     <img className="rounded-lg shadow-md w-full" src={AboutImage} alt="" />
                 </div>
                 <div className="">
-                    <p className="font-semibold text-2xl mb-4">Membangun aplikasi anda lewat kami</p>
-                    <p className="max-w-md font-normal text-accent text-lg">
+                    <p className="font-semibold text-2xl text-primary mb-4">Membangun aplikasi anda lewat kami</p>
+                    <p className="max-w-md font-normal text-accent text-lg text-gray-500">
                         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ab, ullam perspiciatis ipsum nobis iste voluptates vitae delectus amet odit modi. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magni, nam! Lorem
                         ipsum dolor sit amet consectetur adipisicing elit. Officia, minima! Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, exercitationem?
                     </p>

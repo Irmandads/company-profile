@@ -51,7 +51,7 @@ const KontakKami = () => {
         <>
             <div className="mb-12 py-16 parent">
                 <motion.div className="" initial="hidden" animate={viewDiv && "visible"} variants={headingAnimation}>
-                    <h1 className="text-5xl font-bold text-center">Hubungi Kami</h1>
+                    <h1 className="text-5xl font-bold text-center text-primary">Hubungi Kami</h1>
                 </motion.div>
 
                 <motion.div className="container mt-16 px-4 md:px-0 md:px-20">
@@ -91,7 +91,7 @@ const KontakKami = () => {
                         </motion.div>
 
                         <motion.div className="w-full md:w-2/3 ml-0 md:ml-4" ref={ref} initial="hidden" animate={viewDiv && "visible"} variants={sectionBodyAnimation}>
-                            <div className="font-bold text-2xl mb-3">Send us a message</div>
+                            <div className="font-bold text-2xl text-blue-500 mb-3">Send us a message</div>
                             <div className="text-gray-500">
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe minima nemo ratione possimus, explicabo quas tempore laudantium, debitis eaque accusamus nihil distinctio, eligendi quis repudiandae?
                             </div>

@@ -26,13 +26,13 @@ const OurService = () => {
                     {DetailLayanan.slice(0, 4).map((data, i) => (
                         <div key={data.id} className="flex flex-col items-center mb-4">
                             <div className="text-blue-400 text-5xl">{data.icon}</div>
-                            <div className="font-medium">{data.title}</div>
+                            <div className="font-medium text-gray-500 mt-2">{data.title}</div>
                         </div>
                     ))}
                 </motion.div>
                 <motion.div ref={ref} initial="hidden" animate={viewDiv && "visible"} variants={sectionBodyAnimation}>
-                    <div className="font-bold text-5xl">Layanan Kami</div>
-                    <div className="mt-5 mr-6">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia voluptatem impedit exercitationem nostrum voluptatibus, nihil quia itaque praesentium veritatis cum?</div>
+                    <div className="font-bold text-5xl text-primary">Layanan Kami</div>
+                    <div className="text-gray-500 mt-5 mr-6">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia voluptatem impedit exercitationem nostrum voluptatibus, nihil quia itaque praesentium veritatis cum?</div>
                     <div>
                         <Link to="/layanan" className="flex items-center mt-5">
                             <RoundedBtn color="base">
