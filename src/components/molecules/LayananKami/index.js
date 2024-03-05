@@ -33,7 +33,7 @@ const LayananKami = () => {
                 </div>
             </motion.div>
 
-            <div className="mt-20 py-16 parent">
+            <div className="py-20 parent">
                 <motion.div className="grid grid-cols-1 sm:grid-cols-2 mb-32 md:grid-cols-2 lg:grid-cols-4 h-40 gap-8" ref={ref} initial="hidden" animate={viewDiv && "visible"} variants={sectionBodyAnimation}>
                     {DetailLayanan.map((data, i) => (
                         <motion.div
